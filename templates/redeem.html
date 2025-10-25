@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Redeem Code - {{ panel_name }}{% endblock %}
+
+{% block content %}
+<div style="max-width: 600px; margin: 0 auto;">
+    <div class="card" style="padding: 40px;">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <i class="fas fa-gift" style="font-size: 72px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+            <h1 style="font-size: 36px; font-weight: 800; margin: 20px 0 10px; color: #333;">
+                Redeem Code
+            </h1>
+            <p style="color: #666;">Enter your redeem code to get free credits</p>
+        </div>
+
+        {% if error %}
+        <div style="background: #fee2e2; border: 2px solid #ef4444; color: #991b1b; padding: 15px; border-radius: 12px; margin-bottom: 20px; text-align: center;">
+            <i class="fas fa-exclamation-circle"></i> {{ error }}
+        </div>
+        {% endif %}
+
+        {% if success %}
+        <div style="background: #d1fae5; border: 2px solid #10b981; color: #065f46; padding: 15px; border-radius: 12px; margin-bottom: 20px; text-align: center;">
+            <i class="fas fa-check-circle"></i> {{ success }}
+        </div>
+        {% endif %}
+
+        <form method="POST" style="margin-top: 30px;">
+            <div style="margin-bottom: 30px;">
+                <label style="display: block; margin-bottom: 10px; font-weight: 600; color: #333; text-align: center;">
+                    <i class="fas fa-ticket-alt"></i> Enter Redeem Code
+                </label>
+                <input type="text" name="code" required
+                       style="width: 100%; padding: 20px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 20px; text-align: center; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;"
+                       placeholder="XXXX-XXXX-XXXX"
+                       maxlength="12">
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; padding: 18px; font-size: 18px;">
+                <i class="fas fa-check"></i> Redeem Now
+            </button>
+        </form>
+
+        <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-radius: 12px; text-align: center;">
+            <p style="color: #666; font-size: 14px;">
+                <i class="fas fa-info-circle"></i> Get redeem codes from admin or promotional campaigns
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

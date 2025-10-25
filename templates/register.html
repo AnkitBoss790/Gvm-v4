@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Register - {{ panel_name }}{% endblock %}
+
+{% block content %}
+<div class="card" style="max-width: 500px; width: 100%; padding: 50px;">
+    <div class="logo-container" style="justify-content: center; flex-direction: column; text-align: center;">
+        <i class="fas fa-crown logo-icon" style="font-size: 72px;"></i>
+        <h1 class="panel-title">GVM PANEL</h1>
+        <p style="color: #666; margin-top: 10px;">Join the Premium VPS Community</p>
+    </div>
+
+    <h2 style="text-align: center; margin: 30px 0 20px; font-size: 28px; color: #333;">Create Account</h2>
+    
+    {% if error %}
+    <div style="background: #fee2e2; border: 2px solid #ef4444; color: #991b1b; padding: 15px; border-radius: 12px; margin-bottom: 20px; text-align: center;">
+        <i class="fas fa-exclamation-circle"></i> {{ error }}
+    </div>
+    {% endif %}
+    
+    <div style="background: #dbeafe; border: 2px solid #3b82f6; color: #1e40af; padding: 15px; border-radius: 12px; margin-bottom: 20px; text-align: center;">
+        <i class="fas fa-gift"></i> Get <strong>10 FREE CREDITS</strong> on signup!
+    </div>
+
+    <form method="POST" style="margin-top: 30px;">
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">
+                <i class="fas fa-user"></i> Username
+            </label>
+            <input type="text" name="username" required
+                   style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 16px; transition: all 0.3s;"
+                   onfocus="this.style.borderColor='#667eea'"
+                   onblur="this.style.borderColor='#e0e0e0'"
+                   placeholder="Choose a username">
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">
+                <i class="fas fa-envelope"></i> Email (Optional)
+            </label>
+            <input type="email" name="email"
+                   style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 16px; transition: all 0.3s;"
+                   onfocus="this.style.borderColor='#667eea'"
+                   onblur="this.style.borderColor='#e0e0e0'"
+                   placeholder="your@email.com">
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">
+                <i class="fas fa-lock"></i> Password
+            </label>
+            <input type="password" name="password" required
+                   style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 16px; transition: all 0.3s;"
+                   onfocus="this.style.borderColor='#667eea'"
+                   onblur="this.style.borderColor='#e0e0e0'"
+                   placeholder="Create a strong password">
+        </div>
+        
+        <div style="margin-bottom: 25px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">
+                <i class="fas fa-lock"></i> Confirm Password
+            </label>
+            <input type="password" name="confirm_password" required
+                   style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 16px; transition: all 0.3s;"
+                   onfocus="this.style.borderColor='#667eea'"
+                   onblur="this.style.borderColor='#e0e0e0'"
+                   placeholder="Confirm your password">
+        </div>
+
+        <div style="margin-bottom: 25px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">
+                <i class="fas fa-gift"></i> Referral Code (Optional)
+            </label>
+            <input type="text" name="referral_code"
+                   style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 16px; transition: all 0.3s;"
+                   onfocus="this.style.borderColor='#667eea'"
+                   onblur="this.style.borderColor='#e0e0e0'"
+                   placeholder="Enter referral code if you have one">
+        </div>
+        
+        <button type="submit" class="btn-primary" style="width: 100%; padding: 18px; font-size: 18px; margin-bottom: 20px;">
+            <i class="fas fa-user-plus"></i> Create Account
+        </button>
+    </form>
+
+    <div style="text-align: center; margin-top: 25px;">
+        <p style="color: #666;">Already have an account?</p>
+        <a href="/login" style="color: #667eea; font-weight: 600; text-decoration: none; font-size: 16px;">
+            Login Now <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-radius: 12px; text-align: center;">
+        <p style="color: #667eea; font-weight: 600; margin-bottom: 10px;">✨ Powered by Krishan Dev</p>
+        <p style="color: #666; font-size: 14px;">Secure & Reliable VPS Hosting</p>
+    </div>
+</div>
+{% endblock %}
